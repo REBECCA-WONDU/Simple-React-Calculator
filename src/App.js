@@ -2,45 +2,48 @@ import './App.css';
 import React, { useState, useRef } from 'react'; 
 import "./index.css";
 
+
+
+
    function App() { 
       const inputVal= useRef(null); 
       const resultVal = useRef(null); 
       const [result, setResult] = useState(0); 
     
-      function plus(props) { 
-        props.preventDefault(); 
+      function plus(e) { 
+        e.preventDefault(); 
         setResult((previous_Result) => previous_Result + Number(inputVal.current.value));
         // Clear input after calculation
         inputVal.current.value = ""; 
       }; 
     
-      function minus(props) { 
-        props.preventDefault(); 
+      function minus(e) { 
+        e.preventDefault(); 
         setResult((previous_Result) => previous_Result - Number(inputVal.current.value)); 
         // Clear input after calculation
         inputVal.current.value = ""; 
       };
     
-      function times(props) { 
-        props.preventDefault(); 
+      function times(e) { 
+        e.preventDefault(); 
         setResult((previous_Result) => previous_Result * Number(inputVal.current.value)); 
         inputVal.current.value = ""; 
       }; 
     
-      function divide(props) { 
-        props.preventDefault(); 
+      function divide(e) { 
+        e.preventDefault(); 
         setResult((previous_Result) => previous_Result / Number(inputVal.current.value)); 
         inputVal.current.value = ""; 
       };
     
-      function resetInput(props) { 
-        props.preventDefault(); 
+      function resetInput(e) { 
+        e.preventDefault(); 
         // Clear input
         inputVal.current.value = ""; 
       }; 
     
-      function resetResult(props) { 
-        props.preventDefault(); 
+      function resetResult(e) { 
+        e.preventDefault(); 
         setResult(0); // Reset result to 0
         inputVal.current.value = ""; 
       }; 
